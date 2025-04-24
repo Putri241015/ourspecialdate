@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Your Date</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        window.onload = function () {
+            emailjs.init("jf43Z0U8A5db8zTTo"); // Your actual Public Key
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="book.html">Book</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <button id="logoutBtn" style="display: none;">Logout</button>
+    </nav>
+
+    <!-- Booking Section -->
+    <h2>💖 Book Your Special Date 💖</h2>
+    <p>Select a date and time for your chosen activity:</p>
+
+    <form id="bookingForm" onsubmit="sendEmail(event)">
+        <label for="activity">Choose Activity:</label>
+        <select id="activity" name="activity">
+            <option value="Dinner Date">Dinner Date</option>
+            <option value="Date Day">Date Day</option>
+            <option value="BJ Night">BJ Night</option>
+            <option value="Nasty Night">Nasty Night</option>
+            <option value="Cook Dinner">Cook Dinner</option>
+        </select>
+
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Select Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <input type="submit" value="Book Now" style="background-color: #ff69b4; color: white;">
+    </form>
+
+    <!-- JavaScript to send email -->
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const activity = document.getElementById("activity").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+
+            const templateParams = {
+                activity: activity,
+                date: date,
+                time: time
+            };
+
+            emailjs.send("service_1mizj95", "template_ln1z87i", templateParams)
+                .then(function(response) {
+                    alert("Your booking was sent successfully! 💌");
+                }, function(error) {
+                    alert("Oops! Something went wrong 😢");
+                    console.error("FAILED...", error);
+                });
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+

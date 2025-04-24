@@ -1,0 +1,131 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff0f5;
+    color: #333;
+    padding: 2em;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Navigation */
+nav {
+    background-color: #ff69b4;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Logout button (styled like nav link) */
+#logoutBtn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#logoutBtn:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+h2 {
+    color: #fff;
+    background-color: #ff69b4;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Submit button styles */
+input[type="submit"] {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #e0529d;
+}
+
+/* Login container */
+.login-container {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 1em;
+    color: #ff69b4;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    margin-bottom: 10px;
+}
+
+.login-container input[type="text"]::placeholder,
+.login-container input[type="password"]::placeholder {
+    color: #aaa;
+}
+
+/* Login button */
+.login-btn {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #e0529d;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    body {
+        padding: 1em;
+    }
+
+    nav, h2 {
+        font-size: 1.5em;
+    }
+
+    .login-container {
+        width: 100%;
+    }
+}
+
